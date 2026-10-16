@@ -104,23 +104,42 @@ class Vending {
     }
 
     // item details
-    void itemDetails(String name) {
+    String itemDetails(String name) {
+        String details = "";
         if(Stock.containsKey(name)) {
             Item item = Stock.get(name);
-            System.out.println(name + " | Price: " + item.price + " | Quantity: " + item.stock);
+            details += name + " | Price: " + item.price + " | Quantity: " + item.stock;
+            System.out.println(details);
+            return details;
         } else {
             System.out.println("We don't have that items");
+
         }
+        return "";
     }
 
     // Discount
-    void discountItem(String name) {
-
+    void discountItem(String name, double discountPercent) {
+        if(Stock.containsKey(name))
+        {
+            Item item = Stock.get(name);
+            item.price = item.price - (item.price * discountPercent);
+            Stock.put(name, item);
+        }
     }
 
     // Bestseller
     void printBestSeller() {
         // Check sales and print which has most sales
+        String bestItem = "";
+        int mostSales = 0;
+        for(String i : Stock.keySet()) {
+            if(Stock.get(i).sales > mostSales) {
+                bestItem = i;
+                mostSales = Stock.get(i).sales;
+            }
+
+        }
     }
 
 }

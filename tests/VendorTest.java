@@ -96,17 +96,19 @@ public class VendorTest {
 
     @Test
     void testItemDetails() {
-        vendor.itemDetails("Candy");
+        assertEquals("Candy | Price: 1.25 | Quantity: 5", vendor.itemDetails("Candy"));
 
     }
 
     @Test
     void testDiscount() {
-
+        vendor.discountItem("Candy", .25);
+        assertEquals("Candy | Price: 0.9375 | Quantity: 5", vendor.itemDetails("Candy"));
     }
 
     @Test
     void testBrintSeller() {
+
 
     }
 
