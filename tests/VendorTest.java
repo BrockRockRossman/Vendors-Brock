@@ -71,6 +71,35 @@ public class VendorTest {
 
     @Test
     void testRename() {
+        vendor.rename("Candy", "Popsicle");
+        assertEquals("Popsicle Gum ", vendor.getItems());
+    }
+
+    @Test
+    void testRemove() {
+        vendor.remove("Candy");
+        assertEquals("Gum ", vendor.getItems());
+
+    }
+
+    @Test
+    void testPrintSales() {
+
+    }
+
+    @Test
+    void testItemDetails() {
+        vendor.itemDetails("Candy");
+
+    }
+
+    @Test
+    void testDiscount() {
+
+    }
+
+    @Test
+    void testBrintSeller() {
 
     }
 

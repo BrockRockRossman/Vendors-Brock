@@ -76,6 +76,15 @@ class Vending {
         }
     }
 
+    //Get list of items
+    String getItems() {
+        String items = "";
+        for(String i : Stock.keySet()) {
+            items += i + " ";
+        }
+        return items;
+    }
+
     // remove item
     void remove(String name) {
         if(Stock.containsKey(name)) {
