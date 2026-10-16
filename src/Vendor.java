@@ -50,6 +50,14 @@ class Vending {
         else System.out.println("Sorry, don't know that item");
     }
 
+    int getStock(String name) {
+        if(Stock.containsKey(name)) {
+            Item item = Stock.get(name);
+            return item.stock;
+        }
+        return 0;
+    }
+
 }
 
 class Examples {

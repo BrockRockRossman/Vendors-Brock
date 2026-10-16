@@ -25,5 +25,31 @@ public class VendorTest {
 
     }
 
+    @Test
+    void testGetStock() {
+        assertEquals(5, vendor.getStock("Candy"));
+    }
+
+    @Test
+    void testSelectGum() {
+        vendor.addMoney(10.00);
+        int initStock = vendor.getStock("Gum");
+        vendor.select("Gum");
+        int finStock = vendor.getStock("Gum");
+        assertEquals(initStock - 1, finStock);
+
+    }
+
+    @Test
+    void testSelectCandy() {
+        vendor.addMoney(10.00); // Add money to purchase Candy
+        int initStock = vendor.getStock("Candy");
+        vendor.select("Candy");
+        int finStock = vendor.getStock("Candy");
+        assertEquals(initStock - 1, finStock);
+
+    }
+
+
 
 }
