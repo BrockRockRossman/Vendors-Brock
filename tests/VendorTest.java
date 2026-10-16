@@ -50,6 +50,17 @@ public class VendorTest {
 
     }
 
+    @Test
+    void testEmptyInventory() {
+        vendor.addMoney(50);
+        vendor.select("Candy");
+        vendor.select("Candy");
+        vendor.select("Candy");
+        vendor.select("Candy");
+        vendor.select("Candy");
+        assertEquals(0, vendor.getStock("Candy"));
+    }
+
 
 
 }
