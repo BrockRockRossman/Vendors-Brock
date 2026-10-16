@@ -58,6 +58,27 @@ class Vending {
         return 0;
     }
 
+    // Restock
+
+    void restock(String name, int amount) {
+        if(Stock.containsKey(name)) {
+            Item item = Stock.get(name);
+            item.restock(amount);
+        }
+    }
+
+    // Change item name
+
+    // remove item
+
+    // track purchases
+
+    // item details
+
+    // Discount
+
+    // Bestseller
+
 }
 
 class Examples {
