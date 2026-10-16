@@ -83,8 +83,15 @@ public class VendorTest {
     }
 
     @Test
-    void testPrintSales() {
+    void testPrintNoSales() {
+        assertEquals("Candy: 0 sold\nGum: 0 sold\n", vendor.printSales());
+    }
 
+    @Test
+    void testPrintSales() {
+        vendor.addMoney(10);
+        vendor.select("Candy");
+        assertEquals("Candy: 1 sold\nGum: 0 sold\n", vendor.printSales());
     }
 
     @Test

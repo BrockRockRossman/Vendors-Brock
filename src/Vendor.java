@@ -93,8 +93,14 @@ class Vending {
     }
 
     // print tracked purchases
-    void printSales() {
-
+    String printSales() {
+        String sales = "";
+        for(String i : Stock.keySet()) {
+            sales += i + ": " + Stock.get(i).sales + " sold";
+            sales += "\n";
+        }
+        System.out.println(sales);
+        return sales;
     }
 
     // item details
