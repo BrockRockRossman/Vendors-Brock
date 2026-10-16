@@ -69,6 +69,11 @@ public class VendorTest {
 
     }
 
+    @Test
+    void testRename() {
+
+    }
+
 
 
 }

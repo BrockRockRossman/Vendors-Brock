@@ -68,16 +68,45 @@ class Vending {
     }
 
     // Change item name
+    void rename(String curName, String newName) {
+        if(Stock.containsKey(curName)) {
+            Item item = Stock.get(curName);
+            Stock.remove(curName);
+            Stock.put(newName, item);
+        }
+    }
 
     // remove item
+    void remove(String name) {
+        if(Stock.containsKey(name)) {
+            Stock.remove(name);
+        }
+    }
 
-    // track purchases
+    // print tracked purchases
+    void printSales() {
+
+    }
 
     // item details
+    void itemDetails(String name) {
+        if(Stock.containsKey(name)) {
+            Item item = Stock.get(name);
+            System.out.println(name + " | Price: " + item.price + " | Quantity: " + item.stock);
+        } else {
+            System.out.println("We don't have that items");
+        }
+    }
 
     // Discount
+    void discountItem(String name) {
+
+    }
 
     // Bestseller
+    void printBestSeller() {
+        // Check sales and print which has most sales
+    }
 
 }
 
