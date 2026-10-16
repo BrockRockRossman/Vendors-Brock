@@ -129,17 +129,22 @@ class Vending {
     }
 
     // Bestseller
-    void printBestSeller() {
+    String printBestSeller() {
         // Check sales and print which has most sales
         String bestItem = "";
         int mostSales = 0;
+        String bestSellPrint = "";
+
         for(String i : Stock.keySet()) {
             if(Stock.get(i).sales > mostSales) {
                 bestItem = i;
                 mostSales = Stock.get(i).sales;
             }
-
         }
+
+        bestSellPrint = bestItem + " is the bestseller with " + mostSales + " sales!";
+        System.out.println(bestSellPrint);
+        return bestSellPrint;
     }
 
 }

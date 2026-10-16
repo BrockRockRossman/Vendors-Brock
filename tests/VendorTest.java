@@ -108,7 +108,9 @@ public class VendorTest {
 
     @Test
     void testBrintSeller() {
-
+        vendor.addMoney(10);
+        vendor.select("Candy");
+        assertEquals("Candy is the bestseller with 1 sales!", vendor.printBestSeller());
 
     }
 
